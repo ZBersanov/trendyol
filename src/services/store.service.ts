@@ -1,4 +1,4 @@
-import { axiosClassic } from '@/api/api.interceptors'
+import { axiosWithAuth } from '@/api/api.interceptors'
 
 import { API_URL } from '@/config/api.config'
 
@@ -10,7 +10,7 @@ import {
 
 class StoreService {
 	async getById(id: string) {
-		const { data } = await axiosClassic<IStore>({
+		const { data } = await axiosWithAuth<IStore>({
 			url: API_URL.stores(`/by-id/${id}`),
 			method: 'GET'
 		})
@@ -18,7 +18,7 @@ class StoreService {
 	}
 
 	async create(data: ICreateStore) {
-		const { data: createdStore } = await axiosClassic<IStore>({
+		const { data: createdStore } = await axiosWithAuth<IStore>({
 			url: API_URL.stores(``),
 			method: 'POST',
 			data
@@ -27,7 +27,7 @@ class StoreService {
 	}
 
 	async update(id: string, data: IEditStore) {
-		const { data: updatedStore } = await axiosClassic<IStore>({
+		const { data: updatedStore } = await axiosWithAuth<IStore>({
 			url: API_URL.stores(`/${id}`),
 			method: 'PUT',
 			data
@@ -36,7 +36,7 @@ class StoreService {
 	}
 
 	async delete(id: string) {
-		const { data: deletedStore } = await axiosClassic<IStore>({
+		const { data: deletedStore } = await axiosWithAuth<IStore>({
 			url: API_URL.stores(`/${id}`),
 			method: 'DELETE'
 		})
