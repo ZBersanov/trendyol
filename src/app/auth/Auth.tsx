@@ -31,6 +31,7 @@ const Auth = () => {
 					alt='trendyol auth'
 					width={100}
 					height={100}
+					className={styles.authLogo}
 				/>
 			</div>
 			<div className={styles.right}>
@@ -42,7 +43,7 @@ const Auth = () => {
 							покупки!
 						</CardDescription>
 					</CardHeader>
-					<CardContent>
+					<CardContent className={styles.content}>
 						<Form {...form}>
 							<form onSubmit={form.handleSubmit(onSubmit)}>
 								<AuthFields
