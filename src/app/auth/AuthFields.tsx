@@ -9,6 +9,7 @@ import {
 import { Input } from '@/components/ui/form-elements/input'
 
 import { IAuthForm } from '@/shared/types/auth.interface'
+import { validEmail } from '@/shared/types/regex'
 
 interface AuthFieldsProps {
 	form: UseFormReturn<IAuthForm, any, undefined>
@@ -44,6 +45,54 @@ export default function AuthFields({
 					)}
 				/>
 			)}
+			<FormField
+				control={form.control}
+				name='email'
+				rules={{
+					required: 'Почта обязательно',
+					pattern: {
+						value: validEmail,
+						message: 'Данные не валидны'
+					}
+				}}
+				render={({ field }) => (
+					<FormItem>
+						<FormControl>
+							<Input
+								placeholder='example@mail.ru'
+								type='email'
+								disabled={isPending}
+								{...field}
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+			<FormField
+				control={form.control}
+				name='password'
+				rules={{
+					required: 'Пароль обязателен',
+					minLength: {
+						value: 6,
+						message: 'Минимум 6 символов'
+					}
+				}}
+				render={({ field }) => (
+					<FormItem>
+						<FormControl>
+							<Input
+								placeholder='******'
+								type='password'
+								disabled={isPending}
+								{...field}
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
 		</>
 	)
 }
