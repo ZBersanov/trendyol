@@ -16,6 +16,7 @@ import { Form } from '@/components/ui/form-elements/form'
 
 import styles from './Auth.module.scss'
 import AuthFields from './AuthFields'
+import { Social } from './Socials'
 import { useAuth } from './useAuth'
 
 const Auth = () => {
@@ -52,6 +53,7 @@ const Auth = () => {
 								<Button disabled={isPending}>Продолжить</Button>
 							</form>
 						</Form>
+						<Social />
 					</CardContent>
 					<CardFooter className={styles.footer}>
 						{isReg ? 'Уже есть аккаунт?' : 'Еще нет аккаунта?'}
