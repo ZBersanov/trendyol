@@ -12,6 +12,7 @@ import { useProfile } from '@/hooks/useProfile'
 import MobileSidebar from '../sidebar/navigation/MobileSidebar'
 
 import styles from './Header.module.scss'
+import { StoreSwitcher } from './StoreSwitcher'
 
 export function Header() {
 	const { user, isLoading } = useProfile()
@@ -25,6 +26,7 @@ export function Header() {
 				) : (
 					user && (
 						<>
+							<StoreSwitcher items={user.stores} />
 							<Link href={DASHBOARD_URL.home()}>
 								<Image
 									src={user.avatar}

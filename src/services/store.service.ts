@@ -44,4 +44,4 @@ class StoreService {
 	}
 }
 
-export const categoryService = new StoreService()
+export const storeService = new StoreService()
