@@ -1,5 +1,7 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
+
+import StoreLayout from '@/components/store-layout/StoreLayout'
 
 export default function Layout({ children }: PropsWithChildren<unknown>) {
-	return <div>{children}</div>
+	return <StoreLayout>{children}</StoreLayout>
 }
