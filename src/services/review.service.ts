@@ -30,3 +30,5 @@ class ReviewService {
 		return deletedReview
 	}
 }
+
+export const reviewService = new ReviewService()
