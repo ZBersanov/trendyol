@@ -65,7 +65,7 @@ export function CreateStoreModal({ children }: PropsWithChildren) {
 									<FormLabel>Название</FormLabel>
 									<FormControl>
 										<Input
-											placeholder='Хьумид'
+											placeholder='Введите название вашего магазина'
 											disabled={isPending}
 											{...field}
 										/>
