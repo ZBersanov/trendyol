@@ -14,6 +14,14 @@ class ProductService {
 		return data || []
 	}
 
+	async getByStoreId(storeId: string) {
+		const { data } = await axiosWithAuth({
+			url: API_URL.products(`/by-storeId/${storeId}`),
+			method: 'GET'
+		})
+		return data
+	}
+
 	async getById(id: string) {
 		const { data } = await axiosWithAuth<IProduct>({
 			url: API_URL.products(`/by-id/${id}`),
