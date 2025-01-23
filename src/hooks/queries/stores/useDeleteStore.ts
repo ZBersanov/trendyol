@@ -1,3 +1,5 @@
+'use client'
+
 import { useMutation } from '@tanstack/react-query'
 import { useParams, useRouter } from 'next/navigation'
 import { useMemo } from 'react'
@@ -11,7 +13,7 @@ export function useDeleteStore() {
 	const params = useParams<{ storeId: string }>()
 	const router = useRouter()
 
-	const { mutate: deleteStore, isPending } = useMutation({
+	const { mutate: deleteStore, isPending: isDeleteLoading } = useMutation({
 		mutationKey: ['delete store'],
 		mutationFn: () => storeService.delete(params.storeId),
 		onSuccess() {
@@ -22,5 +24,8 @@ export function useDeleteStore() {
 			toast.error('Ошибка при удалении магазина')
 		}
 	})
-	return useMemo(() => ({ deleteStore, isPending }), [deleteStore, isPending])
+	return useMemo(
+		() => ({ deleteStore, isDeleteLoading }),
+		[deleteStore, isDeleteLoading]
+	)
 }

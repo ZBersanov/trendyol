@@ -1,3 +1,5 @@
+'use client'
+
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useParams } from 'next/navigation'
 import { useMemo } from 'react'
@@ -17,7 +19,7 @@ export function useUpdateStore() {
 		queryFn: () => storeService.getById(params.storeId)
 	})
 
-	const { mutate: updateStore, isPending } = useMutation({
+	const { mutate: updateStore, isPending: isUpdateLoading } = useMutation({
 		mutationKey: ['update store'],
 		mutationFn: (data: IEditStore) =>
 			storeService.update(params.storeId, data),
@@ -33,7 +35,7 @@ export function useUpdateStore() {
 	})
 
 	return useMemo(
-		() => ({ store, updateStore, isPending }),
-		[store, updateStore, isPending]
+		() => ({ store, updateStore, isUpdateLoading }),
+		[store, updateStore, isUpdateLoading]
 	)
 }
