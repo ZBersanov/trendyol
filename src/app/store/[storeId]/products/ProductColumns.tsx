@@ -1,25 +1,20 @@
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuGroup,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuPortal,
-	DropdownMenuSeparator,
-	DropdownMenuSub,
-	DropdownMenuSubContent,
-	DropdownMenuSubTrigger,
-	DropdownMenuTrigger
-} from '@radix-ui/react-dropdown-menu'
 import { ColumnDef } from '@tanstack/react-table'
 import { ArrowUpDown, ExternalLink, MoreHorizontal, Pencil } from 'lucide-react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
+import { DropdownMenuShortcut } from '@/components/ui/dropdown-menu'
 
 import { PUBLIC_URL, STORE_URL } from '@/config/url.config'
 
-interface IProductColumn {
+export interface IProductColumn {
 	id: string
 	title: string
 	price: string

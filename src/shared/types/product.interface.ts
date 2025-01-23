@@ -1,3 +1,4 @@
+import { ICategory } from './category.interface'
 import { IColor } from './color.interface'
 import { IReview } from './review.interface'
 import { IStore } from './store.interface'
@@ -8,10 +9,10 @@ export interface IProduct {
 	description: string
 	price: number
 	images: string
-	category: string
+	category: ICategory
 	review: IReview[]
 	color: IColor
-	store: IStore
+	storeId: string
 }
 
 export interface IProductInput
