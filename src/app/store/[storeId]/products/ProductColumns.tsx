@@ -10,7 +10,6 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { DropdownMenuShortcut } from '@/components/ui/dropdown-menu'
 
 import { PUBLIC_URL, STORE_URL } from '@/config/url.config'
 
@@ -30,7 +29,7 @@ export const columns: ColumnDef<IProductColumn>[] = [
 			return (
 				<Button
 					variant={'ghost'}
-					onClick={() => column.getIsSorted() === 'asc'}
+					onClick={() => column.toggleSorting()}
 				>
 					Название
 					<ArrowUpDown className='ml-2 size-4' />
