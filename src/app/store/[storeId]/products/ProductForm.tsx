@@ -36,7 +36,7 @@ import { IProduct, IProductInput } from '@/shared/types/product.interface'
 import styles from '../Store.module.scss'
 
 interface ProductFormProps {
-	product: IProduct | null
+	product?: IProduct
 	categories: ICategory[]
 	colors: IColor[]
 }
@@ -89,120 +89,126 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 			</div>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)}>
-					<FormField
-						control={form.control}
-						name='title'
-						rules={{
-							required: 'Название обязательно'
-						}}
-						render={({ field }) => (
-							<FormItem>
-								<FormControl>
-									<Input
-										placeholder='Название продукта'
+					<div className={styles.fields}>
+						<FormField
+							control={form.control}
+							name='title'
+							rules={{
+								required: 'Название обязательно'
+							}}
+							render={({ field }) => (
+								<FormItem>
+									<FormControl>
+										<Input
+											placeholder='Название продукта'
+											disabled={
+												isCreateLoading ||
+												isUpdateLoading
+											}
+											{...field}
+										/>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						<FormField
+							control={form.control}
+							name='price'
+							rules={{
+								required: 'Цена обязательна'
+							}}
+							render={({ field }) => (
+								<FormItem>
+									<FormControl>
+										<Input
+											placeholder='Цена продукта'
+											disabled={
+												isCreateLoading ||
+												isUpdateLoading
+											}
+											// {...field}
+										/>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						<FormField
+							control={form.control}
+							name='categoryId'
+							rules={{
+								required: 'Категория обязательна'
+							}}
+							render={({ field }) => (
+								<FormItem>
+									<Select
+										onValueChange={field.onChange}
+										defaultValue={field.value}
 										disabled={
 											isCreateLoading || isUpdateLoading
 										}
-										{...field}
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-					<FormField
-						control={form.control}
-						name='price'
-						rules={{
-							required: 'Цена обязательна'
-						}}
-						render={({ field }) => (
-							<FormItem>
-								<FormControl>
-									<Input
-										placeholder='Цена продукта'
+									>
+										<FormControl>
+											<SelectTrigger>
+												<SelectValue placeholder='Категория товара' />
+											</SelectTrigger>
+										</FormControl>
+										<SelectContent>
+											<SelectGroup>
+												{categories.map(category => (
+													<SelectItem
+														key={category.id}
+														value={category.id}
+													>
+														{category.title}
+													</SelectItem>
+												))}
+											</SelectGroup>
+										</SelectContent>
+									</Select>
+								</FormItem>
+							)}
+						/>
+					</div>
+					<div className={styles.fields}>
+						<FormField
+							control={form.control}
+							name='colorId'
+							rules={{
+								required: 'Цвет обязателен'
+							}}
+							render={({ field }) => (
+								<FormItem>
+									<Select
+										onValueChange={field.onChange}
+										defaultValue={field.value}
 										disabled={
 											isCreateLoading || isUpdateLoading
 										}
-										{...field}
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-					<FormField
-						control={form.control}
-						name='categoryId'
-						rules={{
-							required: 'Категория обязательна'
-						}}
-						render={({ field }) => (
-							<FormItem>
-								<Select
-									onValueChange={field.onChange}
-									defaultValue={field.value}
-									disabled={
-										isCreateLoading || isUpdateLoading
-									}
-								>
-									<FormControl>
-										<SelectTrigger>
-											<SelectValue placeholder='Категория товара' />
-										</SelectTrigger>
-									</FormControl>
-									<SelectContent>
-										<SelectGroup>
-											{categories.map(category => (
-												<SelectItem
-													key={category.id}
-													value={category.id}
-												>
-													{category.title}
-												</SelectItem>
-											))}
-										</SelectGroup>
-									</SelectContent>
-								</Select>
-							</FormItem>
-						)}
-					/>
-					<FormField
-						control={form.control}
-						name='colorId'
-						rules={{
-							required: 'Цвет обязателен'
-						}}
-						render={({ field }) => (
-							<FormItem>
-								<Select
-									onValueChange={field.onChange}
-									defaultValue={field.value}
-									disabled={
-										isCreateLoading || isUpdateLoading
-									}
-								>
-									<FormControl>
-										<SelectTrigger>
-											<SelectValue placeholder='Цвет товара' />
-										</SelectTrigger>
-									</FormControl>
-									<SelectContent>
-										<SelectGroup>
-											{colors.map(color => (
-												<SelectItem
-													key={color.id}
-													value={color.id}
-												>
-													{color.name}
-												</SelectItem>
-											))}
-										</SelectGroup>
-									</SelectContent>
-								</Select>
-							</FormItem>
-						)}
-					/>
+									>
+										<FormControl>
+											<SelectTrigger>
+												<SelectValue placeholder='Цвет товара' />
+											</SelectTrigger>
+										</FormControl>
+										<SelectContent>
+											<SelectGroup>
+												{colors.map(color => (
+													<SelectItem
+														key={color.id}
+														value={color.id}
+													>
+														{color.name}
+													</SelectItem>
+												))}
+											</SelectGroup>
+										</SelectContent>
+									</Select>
+								</FormItem>
+							)}
+						/>
+					</div>
 					<FormField
 						control={form.control}
 						name='description'
