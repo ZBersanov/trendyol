@@ -7,8 +7,8 @@ import React from 'react'
 
 import Heading from '@/components/ui/Heading'
 import { Button } from '@/components/ui/button'
-import { DataTable } from '@/components/ui/data-loading/DataTable'
-import DataTableLoading from '@/components/ui/data-loading/DataTableLoading'
+import { DataTable } from '@/components/ui/data-table/DataTable'
+import DataTableLoading from '@/components/ui/data-table/DataTableLoading'
 
 import { STORE_URL } from '@/config/url.config'
 
