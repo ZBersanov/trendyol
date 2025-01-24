@@ -10,7 +10,7 @@ import { categoryService } from '@/services/category.service'
 import { ICategoryInput } from '@/shared/types/category.interface'
 
 export function useUpdateCategory() {
-	const params = useParams<{ storeId: string }>()
+	const params = useParams<{ storeId: string; categoryId: string }>()
 	const router = useRouter()
 	const queryClient = useQueryClient()
 
@@ -18,7 +18,7 @@ export function useUpdateCategory() {
 		useMutation({
 			mutationKey: ['update category'],
 			mutationFn: (data: ICategoryInput) =>
-				categoryService.update(params.storeId, data),
+				categoryService.update(params.categoryId, data),
 			onSuccess() {
 				queryClient.invalidateQueries({
 					queryKey: ['get categories for store dashboard']

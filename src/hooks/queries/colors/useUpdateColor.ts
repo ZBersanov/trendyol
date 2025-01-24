@@ -10,7 +10,7 @@ import { colorService } from '@/services/color.service'
 import { IColorInput } from '@/shared/types/color.interface'
 
 export function useUpdateColor() {
-	const params = useParams<{ storeId: string }>()
+	const params = useParams<{ storeId: string; colorId: string }>()
 	const router = useRouter()
 	const queryClient = useQueryClient()
 
@@ -18,7 +18,7 @@ export function useUpdateColor() {
 		useMutation({
 			mutationKey: ['update color'],
 			mutationFn: (data: IColorInput) =>
-				colorService.update(params.storeId, data),
+				colorService.update(params.colorId, data),
 			onSuccess() {
 				queryClient.invalidateQueries({
 					queryKey: ['get colors for store dashboard']
