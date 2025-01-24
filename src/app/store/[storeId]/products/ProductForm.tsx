@@ -56,7 +56,7 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 
 	const form = useForm<IProductInput>({
 		mode: 'onChange',
-		defaultValues: {
+		values: {
 			title: product?.title || '',
 			price: product?.price || 0,
 			images: product?.images || [],

@@ -30,7 +30,7 @@ export function Settings() {
 
 	const form = useForm<IEditStore>({
 		mode: 'onChange',
-		defaultValues: {
+		values: {
 			title: store?.title || '',
 			description: store?.description || ''
 		}
