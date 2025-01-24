@@ -44,7 +44,7 @@ export const columns: ColumnDef<IProductColumn>[] = [
 			return (
 				<Button
 					variant={'ghost'}
-					onClick={() => column.getIsSorted() === 'asc'}
+					onClick={() => column.toggleSorting()}
 				>
 					Цена
 					<ArrowUpDown className='ml-2 size-4' />
@@ -58,7 +58,7 @@ export const columns: ColumnDef<IProductColumn>[] = [
 			return (
 				<Button
 					variant={'ghost'}
-					onClick={() => column.getIsSorted() === 'asc'}
+					onClick={() => column.toggleSorting()}
 				>
 					категория
 					<ArrowUpDown className='ml-2 size-4' />
@@ -72,7 +72,7 @@ export const columns: ColumnDef<IProductColumn>[] = [
 			return (
 				<Button
 					variant={'ghost'}
-					onClick={() => column.getIsSorted() === 'asc'}
+					onClick={() => column.toggleSorting()}
 				>
 					Цвет
 					<ArrowUpDown className='ml-2 size-4' />

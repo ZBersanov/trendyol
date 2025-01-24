@@ -14,6 +14,7 @@ import {
 	FormLabel,
 	FormMessage
 } from '@/components/ui/form-elements/form'
+import { ImageUpload } from '@/components/ui/form-elements/image-upload/ImageUpload'
 import { Input } from '@/components/ui/form-elements/input'
 import { ConfirmModal } from '@/components/ui/modals/ConfirmModal'
 import {
@@ -89,6 +90,28 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 			</div>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)}>
+					<FormField
+						control={form.control}
+						name='images'
+						rules={{
+							required: 'Необходимо добавить изображение'
+						}}
+						render={({ field }) => (
+							<FormItem className='mt-4'>
+								<FormLabel>Изображение</FormLabel>
+								<FormControl>
+									<ImageUpload
+										isDisabled={
+											isCreateLoading || isUpdateLoading
+										}
+										onChange={field.onChange}
+										value={field.value}
+									/>
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
 					<div className={styles.fields}>
 						<FormField
 							control={form.control}
