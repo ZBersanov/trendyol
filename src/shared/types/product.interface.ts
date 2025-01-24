@@ -8,7 +8,7 @@ export interface IProduct {
 	title: string
 	description: string
 	price: number
-	images: string
+	images: string[]
 	category: ICategory
 	review: IReview[]
 	color: IColor
@@ -16,7 +16,7 @@ export interface IProduct {
 }
 
 export interface IProductInput
-	extends Omit<IProduct, 'id' | 'review' | 'store' | 'category' | 'color'> {
+	extends Omit<IProduct, 'id' | 'review' | 'storeId' | 'category' | 'color'> {
 	categoryId: string
 	colorId: string
 }

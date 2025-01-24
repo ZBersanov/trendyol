@@ -12,7 +12,7 @@ import { productService } from '@/services/product.service'
 
 import { IProductInput } from '@/shared/types/product.interface'
 
-export function useUpdateProduct() {
+export function useCreateProduct() {
 	const params = useParams<{ storeId: string }>()
 	const router = useRouter()
 	const queryClient = useQueryClient()
