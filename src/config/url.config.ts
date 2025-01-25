@@ -38,7 +38,7 @@ export const STORE_URL = {
 	colors: (storeId = '') => STORE_URL.root(`/${storeId}/colors`),
 	colorCreate: (storeId = '') => STORE_URL.root(`/${storeId}/colors/create`),
 	colorEdit: (storeId = '', id = '') =>
-		STORE_URL.root(`/${storeId}/color/${id}`),
+		STORE_URL.root(`/${storeId}/colors/${id}`),
 
 	reviews: (storeId = '') => STORE_URL.root(`/${storeId}/review`),
 

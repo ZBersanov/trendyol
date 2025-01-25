@@ -150,7 +150,7 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 												isCreateLoading ||
 												isUpdateLoading
 											}
-											// {...field}
+											{...field}
 										/>
 									</FormControl>
 									<FormMessage />

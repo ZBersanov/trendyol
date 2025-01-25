@@ -67,9 +67,9 @@ class ProductService {
 		return createdProduct
 	}
 
-	async update(data: IProductInput, storeId: string) {
+	async update(data: IProductInput, productId: string) {
 		const { data: updatedProduct } = await axiosWithAuth<IProduct>({
-			url: API_URL.products(`/${storeId}`),
+			url: API_URL.products(`/${productId}`),
 			method: 'PUT',
 			data
 		})
