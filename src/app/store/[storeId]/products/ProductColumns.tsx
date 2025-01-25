@@ -13,12 +13,14 @@ import {
 
 import { PUBLIC_URL, STORE_URL } from '@/config/url.config'
 
+import { IColorInput } from '@/shared/types/color.interface'
+
 export interface IProductColumn {
 	id: string
 	title: string
 	price: string
 	category: string
-	color: string
+	color: IColorInput
 	storeId: string
 }
 
@@ -79,15 +81,18 @@ export const columns: ColumnDef<IProductColumn>[] = [
 			)
 		},
 		cell: ({ row }) => (
-			<div className='flex items-center gap-x-3'>
-				{row.original.color}
-				<div
-					className='size-5 rounded-full border'
-					style={{
-						backgroundColor: row.original.color
-					}}
-				/>
-			</div>
+			console.log(row.original),
+			(
+				<div className='flex items-center gap-x-3'>
+					{row.original.color.name}
+					<div
+						className='size-5 rounded-full border'
+						style={{
+							backgroundColor: row.original.color.value
+						}}
+					/>
+				</div>
+			)
 		)
 	},
 	{
