@@ -40,7 +40,7 @@ export const STORE_URL = {
 	colorEdit: (storeId = '', id = '') =>
 		STORE_URL.root(`/${storeId}/colors/${id}`),
 
-	reviews: (storeId = '') => STORE_URL.root(`/${storeId}/review`),
+	reviews: (storeId = '') => STORE_URL.root(`/${storeId}/reviews`),
 
 	settings: (storeId = '') => STORE_URL.root(`/${storeId}/settings`)
 }
