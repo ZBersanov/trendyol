@@ -121,6 +121,7 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 							}}
 							render={({ field }) => (
 								<FormItem>
+									<FormLabel>Название</FormLabel>
 									<FormControl>
 										<Input
 											placeholder='Название продукта'
@@ -143,6 +144,7 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 							}}
 							render={({ field }) => (
 								<FormItem>
+									<FormLabel>Цена</FormLabel>
 									<FormControl>
 										<Input
 											placeholder='Цена продукта'

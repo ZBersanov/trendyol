@@ -10,6 +10,7 @@ import {
 	FormControl,
 	FormField,
 	FormItem,
+	FormLabel,
 	FormMessage
 } from '@/components/ui/form-elements/form'
 import { Input } from '@/components/ui/form-elements/input'
@@ -79,6 +80,7 @@ export function ColorForm({ color }: ColorFormProps) {
 							}}
 							render={({ field }) => (
 								<FormItem>
+									<FormLabel>Название</FormLabel>
 									<FormControl>
 										<Input
 											placeholder='Название цвета'
@@ -101,6 +103,7 @@ export function ColorForm({ color }: ColorFormProps) {
 							}}
 							render={({ field }) => (
 								<FormItem>
+									<FormLabel>Значение</FormLabel>
 									<FormControl>
 										<Input
 											placeholder='Значение цвета'
