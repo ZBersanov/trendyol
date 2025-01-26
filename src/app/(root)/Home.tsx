@@ -1,6 +1,12 @@
+import { IProduct } from '@/shared/types/product.interface'
+
 import Hero from './hero/Hero'
 
-const Home = () => {
+interface HomeProps {
+	products: IProduct[]
+}
+
+const Home = ({ products }: HomeProps) => {
 	return <Hero />
 }
 

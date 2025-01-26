@@ -40,7 +40,7 @@ class ProductService {
 		return data
 	}
 
-	async getMostPopular(categoryId: string) {
+	async getMostPopular() {
 		const { data } = await axiosWithAuth<IProduct[]>({
 			url: API_URL.products(`/most-popular`),
 			method: 'GET'
