@@ -4,6 +4,6 @@ export interface ICatalog {
 	title: string
 	description?: string
 	linkTitle?: string
-	link: string
+	link?: string
 	products: IProduct[]
 }
