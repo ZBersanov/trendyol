@@ -167,6 +167,7 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 							}}
 							render={({ field }) => (
 								<FormItem>
+									<FormLabel>Категория</FormLabel>
 									<Select
 										onValueChange={field.onChange}
 										defaultValue={field.value}
@@ -237,9 +238,6 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 					<FormField
 						control={form.control}
 						name='description'
-						rules={{
-							required: 'Описание обязательно'
-						}}
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>Описание</FormLabel>
