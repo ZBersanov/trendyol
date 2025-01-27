@@ -13,6 +13,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+	console.log(product)
+
 	return (
 		<div className={styles.card}>
 			<Link href={PUBLIC_URL.product(product.id)}>
