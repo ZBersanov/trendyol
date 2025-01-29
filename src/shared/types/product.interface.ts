@@ -10,7 +10,7 @@ export interface IProduct {
 	price: number
 	images: string[]
 	category: ICategory
-	review: IReview[]
+	reviews: IReview[]
 	color: IColor
 	storeId: string
 }
