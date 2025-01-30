@@ -12,8 +12,8 @@ import { DASHBOARD_URL, PUBLIC_URL, STORE_URL } from '@/config/url.config'
 
 import { useProfile } from '@/hooks/useProfile'
 
+import styles from './HeaderMenu.module.scss'
 import HeaderCart from './header-cart/HeaderCart'
-import styles from './header-cart/HeaderCart.module.scss'
 
 export default function HeaderMenu() {
 	const { user, isLoading } = useProfile()
