@@ -31,7 +31,7 @@ export default function HeaderCart() {
 			<SheetTrigger asChild>
 				<Button variant={'ghost'}>Корзина</Button>
 			</SheetTrigger>
-			<SheetContent>
+			<SheetContent className={styles.cart}>
 				<Heading title='Корзина' className='text-xl' />
 				<div className={styles.items}>
 					{items.length ? (
@@ -53,6 +53,7 @@ export default function HeaderCart() {
 							variant={'primary'}
 							onClick={handleClick}
 							disabled={isCreatePaymentLoading}
+							className='w-full'
 						>
 							Перейти к оплате
 						</Button>
