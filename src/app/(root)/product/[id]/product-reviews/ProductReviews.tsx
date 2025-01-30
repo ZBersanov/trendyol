@@ -25,7 +25,7 @@ export function ProductReviews({ product }: ProductReviewsProps) {
 	const { deleteReview } = useDeleteReview()
 
 	return (
-		<>
+		<div className='text-white'>
 			<div className={styles.header}>
 				<h1>Отзывы</h1>
 				{user && (
@@ -82,6 +82,6 @@ export function ProductReviews({ product }: ProductReviewsProps) {
 					</div>
 				)}
 			</div>
-		</>
+		</div>
 	)
 }

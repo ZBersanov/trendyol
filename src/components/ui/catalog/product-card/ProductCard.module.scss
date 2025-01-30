@@ -1,19 +1,19 @@
 .card{
-  @apply bg-white;
+  @apply bg-[#020817] rounded-xl p-2;
 
   img{
     @apply rounded-lg;
   }
 
   > .title{
-    @apply mt-4 font-semibold text-gray-700 line-clamp-1;
+    @apply mt-4 font-semibold text-[#F8FAFC] line-clamp-1;
   }
 
   > .category{
-    @apply mt-1 text-sm text-gray-500;
+    @apply mt-1 text-sm text-[#F8FAFC];
   }
 
   > .price {
-    @apply mt-1 font-medium text-sm text-gray-900;
+    @apply mt-1 font-medium text-sm text-[#F8FAFC];
   }
 }

@@ -15,7 +15,7 @@ export default function Hero() {
 			<h1 className={styles.heading}>
 				<span>Мохьмад</span> болх меттиг кеч елахь
 			</h1>
-			<p className={styles.descripton}>{SITE_DESCRIPTION}</p>
+			<p className={styles.description}>{SITE_DESCRIPTION}</p>
 			<Link href={PUBLIC_URL.explorer()}>
 				<Button variant={'primary'}>
 					За покупками

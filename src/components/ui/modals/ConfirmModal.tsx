@@ -23,7 +23,7 @@ export function ConfirmModal({
 	return (
 		<AlertDialog>
 			<AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
-			<AlertDialogContent>
+			<AlertDialogContent className='bg-[#09090B] text-white border-[#27272A]'>
 				<AlertDialogHeader>
 					<AlertDialogTitle>Вы уверены?</AlertDialogTitle>
 					<AlertDialogDescription>
@@ -31,7 +31,9 @@ export function ConfirmModal({
 					</AlertDialogDescription>
 				</AlertDialogHeader>
 				<AlertDialogFooter>
-					<AlertDialogCancel>Закрыть</AlertDialogCancel>
+					<AlertDialogCancel className='bg-red-500 text-white hover:bg-red-500/90 hover:text-white/90 border-none'>
+						Закрыть
+					</AlertDialogCancel>
 					<AlertDialogAction
 						className='text-white bg-blue-500 hover:bg-blue-500/90'
 						onClick={handleClick}

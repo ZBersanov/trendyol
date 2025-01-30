@@ -11,7 +11,7 @@ export function Logo() {
 	return (
 		<Link href={PUBLIC_URL.home()} className={styles.logo}>
 			<Image
-				src={'/images/trendyol-logo.png'}
+				src={'/images/trendyol-auth.svg'}
 				width={35}
 				height={35}
 				alt={SITE_NAME}

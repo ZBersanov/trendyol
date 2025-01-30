@@ -32,7 +32,7 @@ export default function HeaderCart() {
 				<Button variant={'ghost'}>Корзина</Button>
 			</SheetTrigger>
 			<SheetContent className={styles.cart}>
-				<Heading title='Корзина' className='text-xl' />
+				<Heading title='Корзина' className='text-xl text-white' />
 				<div className={styles.items}>
 					{items.length ? (
 						items.map(item => (

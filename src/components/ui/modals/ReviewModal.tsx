@@ -51,10 +51,10 @@ export function ReviewModal({
 	return (
 		<Dialog open={isOpen} onOpenChange={setIsOpen}>
 			<DialogTrigger asChild>{children}</DialogTrigger>
-			<DialogContent>
+			<DialogContent className='bg-[#09090B] text-white'>
 				<DialogHeader>
 					<DialogTitle>Создание отзыва</DialogTitle>
-					<DialogDescription>
+					<DialogDescription className='text-[#3B82F6]'>
 						Для создания отзыва необходимо указать рейтинг и текст
 					</DialogDescription>
 				</DialogHeader>
@@ -99,6 +99,7 @@ export function ReviewModal({
 											{...field}
 											placeholder='Текст отзыва'
 											disabled={isReviewCreateLoading}
+											className='bg-transparent'
 										/>
 									</FormControl>
 									<FormMessage />

@@ -2,12 +2,12 @@
   @apply flex items-center relative;
 
   input{
-    @apply rounded-lg rounded-r-none focus-visible:ring-transparent pr-8;
+    @apply rounded-lg rounded-r-none focus-visible:ring-transparent pr-8 bg-[#16161A] text-white;
 
   }
 
   button{
-    @apply rounded-l-none;
+    @apply rounded-l-none absolute right-[-1px];
 
     > svg{
       @apply size-4

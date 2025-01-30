@@ -1,5 +1,5 @@
 .cart{
-  @apply h-full flex flex-col;
+  @apply h-full flex flex-col bg-[#09090B] text-white;
 
   .items{
     @apply flex flex-col w-full flex-1;

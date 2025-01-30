@@ -1,5 +1,5 @@
 .header{
-  @apply flex items-center justify-between mt-6;
+  @apply flex items-center justify-between mt-4;
 
   > h1{
     @apply text-2xl font-bold;
@@ -14,7 +14,7 @@
   @apply grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4;
 
   > .review{
-    @apply border rounded-lg p-4;
+    @apply border border-[#27272A] rounded-lg p-4;
 
     > .header{
       @apply flex justify-between;
