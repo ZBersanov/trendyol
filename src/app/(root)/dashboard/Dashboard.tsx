@@ -52,7 +52,7 @@ export default function Dashboard() {
 		<div className={styles.wrapper}>
 			<div className={styles.header}>
 				<h1>Ваши заказы</h1>
-				<Button variant={'ghost'} onClick={() => logout}>
+				<Button variant={'ghost'} onClick={() => logout()}>
 					<LogOut />
 					Выйти
 				</Button>

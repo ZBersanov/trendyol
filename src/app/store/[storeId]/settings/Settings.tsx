@@ -91,6 +91,7 @@ export function Settings() {
 									<Textarea
 										placeholder='Описание магазина (необязательно)'
 										disabled={isUpdateLoading}
+										className='text-black'
 										{...field}
 									/>
 								</FormControl>

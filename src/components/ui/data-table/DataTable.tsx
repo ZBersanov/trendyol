@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
 								.getColumn(filterKey)
 								?.setFilterValue(event.target.value)
 						}
-						className='max-w-sm'
+						className='max-w-sm text-black'
 					/>
 				</div>
 			)}

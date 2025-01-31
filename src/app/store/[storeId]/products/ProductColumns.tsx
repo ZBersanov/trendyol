@@ -81,18 +81,15 @@ export const columns: ColumnDef<IProductColumn>[] = [
 			)
 		},
 		cell: ({ row }) => (
-			console.log(row.original),
-			(
-				<div className='flex items-center gap-x-3'>
-					{row.original.color.name}
-					<div
-						className='size-5 rounded-full border'
-						style={{
-							backgroundColor: row.original.color.value
-						}}
-					/>
-				</div>
-			)
+			<div className='flex items-center gap-x-3'>
+				{row.original.color.name}
+				<div
+					className='size-5 rounded-full border'
+					style={{
+						backgroundColor: row.original.color.value
+					}}
+				/>
+			</div>
 		)
 	},
 	{
