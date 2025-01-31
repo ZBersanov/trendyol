@@ -175,7 +175,7 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 											isCreateLoading || isUpdateLoading
 										}
 									>
-										<FormControl>
+										<FormControl className='text-black'>
 											<SelectTrigger>
 												<SelectValue placeholder='Категория товара' />
 											</SelectTrigger>
@@ -213,7 +213,7 @@ export function ProductForm({ product, categories, colors }: ProductFormProps) {
 											isCreateLoading || isUpdateLoading
 										}
 									>
-										<FormControl>
+										<FormControl className='text-black'>
 											<SelectTrigger>
 												<SelectValue placeholder='Цвет товара' />
 											</SelectTrigger>
